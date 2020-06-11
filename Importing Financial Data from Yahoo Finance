@@ -1,0 +1,17 @@
+import numpy as np
+from pandas_datareader import data as wb #use import pandas_datareader.data as wb#
+import matplotlib.pyplot as plt
+
+# the below error can be circumvented by using the command
+# import pandas_datareader.data as wb
+
+## Pulling Facebook's stock price
+fb = web.DataReader('FB', data_source = 'yahoo', start = '2011-1-1')
+
+## Checking the data
+fb.head()
+fb.tail()
+
+##it is important to observe that the data, I asked for, was supposed to come from 2011-1-1, however the data 
+##came from 2012-05-18, that is May 18, 2012. This is because Facebook was listed on NASADAQ the very same day. 
+## We can also give the end date for retrieving data from an interval. 
